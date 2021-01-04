@@ -207,7 +207,7 @@ void mc_arc(float*            target,
             previous_position[axis_1]      = position[axis_1];
             previous_position[axis_linear] = position[axis_linear];
             //#else
-            mc_line(position, pl_data);
+            //mc_line(position, pl_data);
             //#endif
             // Bail mid-circle on system abort. Runtime command check already performed by mc_line.
             if (sys.abort) {
