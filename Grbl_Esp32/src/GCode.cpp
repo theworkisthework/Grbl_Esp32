@@ -1604,9 +1604,9 @@ Error gc_execute_line(char* line, uint8_t client) {
                 coolant_off();
             }
             report_feedback_message(Message::ProgramEnd);
-#ifdef USE_M30
+
             user_m30();
-#endif
+
             break;
     }
     gc_state.modal.program_flow = ProgramFlow::Running;  // Reset program flow.

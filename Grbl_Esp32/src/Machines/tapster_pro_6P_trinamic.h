@@ -22,7 +22,6 @@
 #define CUSTOM_CODE_FILENAME "Custom/parallel_delta.cpp"
 /*
 // enable these special machine functions to be called from the main program
-#define USE_KINEMATICS             // there are kinematic equations for this machine
 #define FWD_KINEMATICS_REPORTING   // report in cartesian
 #define USE_RMT_STEPS              // Use the RMT periferal to generate step pulses
 #define USE_TRINAMIC               // some Trinamic motors are used on this machine
@@ -39,9 +38,6 @@
 */
 
 #define N_AXIS 3
-
-#define USE_KINEMATICS      // there are kinematic equations for this machine
-#define USE_FWD_KINEMATICS  // report in cartesian
 
 // ================== Delta Geometry ===========================
 
