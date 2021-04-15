@@ -23,6 +23,12 @@
     along with Grbl_ESP32.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#define CUSTOM_CODE_FILENAME    "../Custom/CoreXY.cpp"
+
+#define USE_KINEMATICS      // there are kinematic equations for this machine
+#define USE_FWD_KINEMATICS  // report in cartesian
+#define USE_MACHINE_INIT    // There is some custom initialization for this machine
+#define USE_CUSTOM_HOMING
 
 // Select a version to match your PCB
 
@@ -39,7 +45,7 @@
 #define X_RSENSE                TMC2130_RSENSE_DEFAULT
 
 #define Y_STEP_PIN              GPIO_NUM_32
-#define Y_DIRECTION_PIN         GPIO_NUM_26
+#define Y_DIRECTION_PIN         GPIO_NUM_33
 #define Y_TRINAMIC_DRIVER       2130        // Which Driver Type?
 #define Y_CS_PIN                GPIO_NUM_16  //chip select
 #define Y_RSENSE                TMC2130_RSENSE_DEFAULT
