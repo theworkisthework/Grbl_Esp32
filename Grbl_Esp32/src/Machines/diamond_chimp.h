@@ -23,17 +23,17 @@
     along with Grbl_ESP32.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define CUSTOM_CODE_FILENAME    "../Custom/CoreXY.cpp"
-
-#define USE_KINEMATICS      // there are kinematic equations for this machine
-#define USE_FWD_KINEMATICS  // report in cartesian
-#define USE_MACHINE_INIT    // There is some custom initialization for this machine
-#define USE_CUSTOM_HOMING
+// #define CUSTOM_CODE_FILENAME    "../Custom/CoreXY.cpp"
+// #define USE_KINEMATICS      // there are kinematic equations for this machine
+// #define USE_FWD_KINEMATICS  // report in cartesian
+// #define USE_MACHINE_INIT    // There is some custom initialization for this machine
+// #define USE_CUSTOM_HOMING
 
 // Select a version to match your PCB
 
 #define MACHINE_NAME    "ESP32_Plotter_Controller_RevA_DIAMOND_CHIMP"
 #define X_LIMIT_PIN     GPIO_NUM_34
+#define Y_LIMIT_PIN     GPIO_NUM_35
 
 #define TRINAMIC_RUN_MODE           TrinamicMode :: CoolStep
 #define TRINAMIC_HOMING_MODE        TrinamicMode :: CoolStep
@@ -50,16 +50,18 @@
 #define Y_CS_PIN                GPIO_NUM_16  //chip select
 #define Y_RSENSE                TMC2130_RSENSE_DEFAULT
 
-// OK to comment out to use pin for other features
 #define STEPPERS_DISABLE_PIN GPIO_NUM_2
 
+// Spindle = soleniod or servo
 
-// Define one of these 2 options for spindle or servo
-#define Z_SERVO_PIN                   GPIO_NUM_27 // comment this out if PWM spindle/laser control.
-#define DEFAULT_Z_MAX_TRAVEL          5.0   // Range of travel is 5mm
-#define DEFAULT_Z_HOMING_MPOS         5.0   // MPos will be set to 5mm after homing
+// Solenoid
+#define SPINDLE_TYPE SpindleType::RELAY
+#define SPINDLE_OUTPUT_PIN GPIO_NUM_27
+#define INVERT_SPINDLE_PWM
+
+// Servo
+//#define Z_SERVO_PIN                   GPIO_NUM_27 // comment this out if PWM spindle/laser control.
 #define Z_SERVO_CAL_MIN               1.0   // calibration factor for the minimum PWM duty
 #define Z_SERVO_CAL_MAX               1.0   // calibration factor for the maximum PWM duty
-
-// #define X_LIMIT_PIN          See version section at beginning of file
-#define Y_LIMIT_PIN             GPIO_NUM_35
+#define DEFAULT_Z_MAX_TRAVEL          5.0   // Range of travel is 5mm
+#define DEFAULT_Z_HOMING_MPOS         5.0   // MPos will be set to 5mm after homing
