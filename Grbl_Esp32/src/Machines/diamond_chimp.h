@@ -55,9 +55,13 @@
 // Spindle = soleniod or servo
 
 // Solenoid
-#define SPINDLE_TYPE SpindleType::RELAY
+#define SPINDLE_TYPE SpindleType::PWM
 #define SPINDLE_OUTPUT_PIN GPIO_NUM_27
 #define INVERT_SPINDLE_PWM
+
+// Laser
+//#define SPINDLE_TYPE SpindleType::LASER
+#define LASER_OUTPUT_PIN GPIO_NUM_27
 
 // Servo
 //#define Z_SERVO_PIN                   GPIO_NUM_27 // comment this out if PWM spindle/laser control.
