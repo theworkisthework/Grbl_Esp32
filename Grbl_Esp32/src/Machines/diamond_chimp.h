@@ -55,7 +55,7 @@
 // Spindle = soleniod or servo
 
 // Solenoid
-#define SPINDLE_TYPE SpindleType::PWM
+#define SPINDLE_TYPE SpindleType::RELAY
 #define SPINDLE_OUTPUT_PIN GPIO_NUM_27
 #define INVERT_SPINDLE_PWM
 
