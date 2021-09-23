@@ -31,6 +31,10 @@
 
 // Select a version to match your PCB
 
+// Use the TMC2130 StallGuard for sensorless homing
+// Uncomment the following and put jumpers on X & Y Limit connectors (J7 & J9)
+#define TRINAMIC_HOMING_MODE TrinamicMode :: StallGuard
+
 #define MACHINE_NAME    "ESP32_Plotter_Controller_RevA_DIAMOND_CHIMP"
 #define X_LIMIT_PIN     GPIO_NUM_34
 #define Y_LIMIT_PIN     GPIO_NUM_35
