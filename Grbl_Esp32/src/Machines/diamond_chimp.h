@@ -23,24 +23,25 @@
     along with Grbl_ESP32.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// #define CUSTOM_CODE_FILENAME    "../Custom/CoreXY.cpp"
-// #define USE_KINEMATICS      // there are kinematic equations for this machine
-// #define USE_FWD_KINEMATICS  // report in cartesian
-// #define USE_MACHINE_INIT    // There is some custom initialization for this machine
-// #define USE_CUSTOM_HOMING
+#define CUSTOM_CODE_FILENAME    "../Custom/CoreXY.cpp"
+#define USE_KINEMATICS      // there are kinematic equations for this machine
+#define USE_FWD_KINEMATICS  // report in cartesian
+#define USE_MACHINE_INIT    // There is some custom initialization for this machine
+#define USE_CUSTOM_HOMING
 
 // Select a version to match your PCB
-
-// Use the TMC2130 StallGuard for sensorless homing
-// Uncomment the following and put jumpers on X & Y Limit connectors (J7 & J9)
-#define TRINAMIC_HOMING_MODE TrinamicMode :: StallGuard
 
 #define MACHINE_NAME    "ESP32_Plotter_Controller_RevA_DIAMOND_CHIMP"
 #define X_LIMIT_PIN     GPIO_NUM_34
 #define Y_LIMIT_PIN     GPIO_NUM_35
 
 #define TRINAMIC_RUN_MODE           TrinamicMode :: CoolStep
-#define TRINAMIC_HOMING_MODE        TrinamicMode :: CoolStep
+// To use conventional switches uncomment the follow and comment
+// out the 'StallGuard' option.
+//#define TRINAMIC_HOMING_MODE        TrinamicMode :: CoolStep
+// To use TMC2130 StallGuard for sensorless homing, uncomment the
+// following and put jumpers on X & Y Limit connectors (J7 & J9)
+#define TRINAMIC_HOMING_MODE        TrinamicMode :: StallGuard
 
 #define X_STEP_PIN              GPIO_NUM_25
 #define X_DIRECTION_PIN         GPIO_NUM_26
