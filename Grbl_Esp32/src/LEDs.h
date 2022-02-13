@@ -5,3 +5,7 @@
 */
 
 void init_leds();
+void leds_white();
+void leds_green();
+void leds_orange();
+void leds_red();
