@@ -3,10 +3,10 @@
   
   Licensed under whatever terms are required by GRBLESP
 */
-
+#include "Grbl.h"
 #include <Adafruit_NeoPixel.h>
 
-Adafruit_NeoPixel leds(1, GPIO_NUM_13, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel leds(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 void leds_green(){
   leds.begin();

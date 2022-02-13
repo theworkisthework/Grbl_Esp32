@@ -75,3 +75,7 @@
 // E-Stop (J18) See: https://github.com/bdring/Grbl_Esp32/wiki/Control-Switches
 //#define CONTROL_FEED_HOLD_PIN   GPIO_NUM_0  // Resets but retains position
 #define CONTROL_RESET_PIN      GPIO_NUM_0  // Resets and loses position
+
+// LEDs
+#define LED_PIN                 GPIO_NUM_13  // The NeoPixels are connected to
+#define NUM_LEDS                1  // The number of NeoPixels connected to LED_PIN
