@@ -20,8 +20,13 @@
 
 #include "Grbl.h"
 #include <WiFi.h>
+#include "LEDs.h"
 
 void grbl_init() {
+    // Attempt to init some neopixels before anything else - cause, gotta start somewhere
+    grbl_msg_sendf(CLIENT_SERIAL, MsgLevel::Info, "Fiddling with LEDs");  // print grbl_esp32 verion info
+    init_leds();
+    grbl_msg_sendf(CLIENT_SERIAL, MsgLevel::Info, "Done fiddling with LEDs");  // print grbl_esp32 verion info
 #ifdef USE_I2S_OUT
     i2s_out_init();  // The I2S out must be initialized before it can access the expanded GPIO port
 #endif
