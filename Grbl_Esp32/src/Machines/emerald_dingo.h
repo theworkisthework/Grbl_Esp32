@@ -2,12 +2,12 @@
 // clang-format off
 
 /*
-    diamond_chimp.h
+    emerald_dingo.h
     
-    Pin assignments for the ESP32 Plotter Controller RevA (Diamond Chimp)
+    Pin assignments for the ESP32 Plotter Controller RevB (Emerald Dingo)
     https://github.com/MarkJB/ESP32_Plotter_Controller
 
-    2021    - Mark Benson
+    2022    - Mark Benson
     
     Grbl_ESP32 is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,13 +29,11 @@
 #define USE_MACHINE_INIT    // There is some custom initialization for this machine
 #define USE_CUSTOM_HOMING
 
-// Select a version to match your PCB
-
-// Use the TMC2130 StallGuard for sensorless homing
+// Use the TMC2130 StallGuard for sensorless homing. Note: Tests suggest this isn't reliable (yet)
 // Uncomment the following and put jumpers on X & Y Limit connectors (J7 & J9)
 //#define TRINAMIC_HOMING_MODE TrinamicMode :: StallGuard
 
-#define MACHINE_NAME    "ESP32_Plotter_Controller_RevA_DIAMOND_CHIMP"
+#define MACHINE_NAME    "ESP32_Plotter_Controller_RevB_Emerald_Dingo"
 #define X_LIMIT_PIN     GPIO_NUM_34
 #define Y_LIMIT_PIN     GPIO_NUM_35
 
@@ -73,3 +71,7 @@
 #define Z_SERVO_CAL_MAX               1.0   // calibration factor for the maximum PWM duty
 #define DEFAULT_Z_MAX_TRAVEL          5.0   // Range of travel is 5mm
 #define DEFAULT_Z_HOMING_MPOS         5.0   // MPos will be set to 5mm after homing
+
+// E-Stop (J18) See: https://github.com/bdring/Grbl_Esp32/wiki/Control-Switches
+//#define CONTROL_FEED_HOLD_PIN   GPIO_NUM_0  // Resets but retains position
+#define CONTROL_RESET_PIN      GPIO_NUM_0  // Resets and loses position
