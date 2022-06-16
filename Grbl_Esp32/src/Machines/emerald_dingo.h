@@ -3,12 +3,12 @@
 
 /*
     emerald_dingo.h
-    
+
     Pin assignments for the ESP32 Plotter Controller RevB (Emerald Dingo)
     https://github.com/MarkJB/ESP32_Plotter_Controller
 
     2022    - Mark Benson
-    
+
     Grbl_ESP32 is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -77,5 +77,6 @@
 #define CONTROL_RESET_PIN      GPIO_NUM_0  // Resets and loses position
 
 // LEDs
+#define ENABLE_LEDS_NEOPIXEL
 #define LED_PIN                 GPIO_NUM_13  // The NeoPixels are connected to
 #define NUM_LEDS                1  // The number of NeoPixels connected to LED_PIN
