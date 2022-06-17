@@ -40,7 +40,7 @@ void grbl_init() {
     report_machine_type(CLIENT_SERIAL);
 #endif
     // Attempt to init some neopixels before anything else - cause, gotta start somewhere
-#ifdef ENABLE_LEDS_NEOPIXEL
+#ifdef ENABLE_LEDS
     leds_init();
 #endif
     settings_init();  // Load Grbl settings from non-volatile storage

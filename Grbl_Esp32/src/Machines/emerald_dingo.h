@@ -77,6 +77,6 @@
 #define CONTROL_RESET_PIN      GPIO_NUM_0  // Resets and loses position
 
 // LEDs
-#define ENABLE_LEDS_NEOPIXEL
 #define LED_PIN                 GPIO_NUM_13  // The NeoPixels are connected to
 #define NUM_LEDS                1  // The number of NeoPixels connected to LED_PIN
+#define ENABLE_LEDS

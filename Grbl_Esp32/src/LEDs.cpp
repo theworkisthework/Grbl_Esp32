@@ -6,7 +6,7 @@
 #include "Grbl.h"
 #include <Adafruit_NeoPixel.h>
 
-#ifdef ENABLE_LEDS_NEOPIXEL
+#ifdef ENABLE_LEDS
 
 Adafruit_NeoPixel leds(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
